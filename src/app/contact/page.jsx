@@ -28,38 +28,74 @@ const info = [
 
 const Contact = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+  const [phone, setPhone] = useState('');
 
-  const closePopup = () => setIsPopupVisible(false);
+  const closePopup = () => {
+    setIsPopupVisible(false);
+    setTimeout(() => {
+      document.getElementById('contactForm').reset();
+      setSelectedService('');
+      setPhone('');
+    }, 2000);
+  }
+
+  const formatPhoneNumber = (value) => {
+    const digits = value.replace(/\D/g, '').substring(0, 11);
+    const areaCode = digits.substring(0, 2);
+    const firstPart = digits.length > 6 && digits.length == 11 ? digits.substring(2, 7) : digits.substring(2, 6);
+    const secondPart = digits.length > 6 && digits.length == 11 ? digits.substring(7, 11) : digits.substring(6, 10);
+
+    if (digits.length > 6) {
+      setPhone(`(${areaCode}) ${firstPart} ${secondPart}`);
+    } else if (digits.length > 2) {
+      setPhone(`(${areaCode}) ${firstPart}`);
+    } else if (digits.length > 0) {
+      setPhone(`(${areaCode}`);
+    } else {
+      setPhone('');
+    }
+  };
+
+  const handleSelectChange = (value) => {
+    setSelectedService(value);
+  };  
+
+  const handleSubmit = () => {
+    setIsPopupVisible(true);
+  };
 
   return <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }} className="py-6 xl:mb-12 mb-4">
     <div className="container mx-auto">
       <div className="flex flex-col xl:flex-row gap-[30px]">
         <div className="xl:w-[54%] order-2 xl:order-none">
-          <form action="https://formsubmit.co/luana.smatos01@gmail.com" method="POST" onSubmit={(e) => {setIsPopupVisible(true)}} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+          <iframe name="hiddenFrame" className="hidden"></iframe>
+          <form id="contactForm" action="https://formsubmit.co/464254e377754e214be6601234604e28" method="POST" target="hiddenFrame" onSubmit={handleSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <input type="hidden" name="_captcha" value="false"></input>
             <input type="hidden" name="_subject" value="Contato portfólio"></input>
             <input type="hidden" name="_template" value="table"></input>
-            <input type="hidden" name="_next" value="https://youtu.be/PVV5qQl_HDo?si=45KHYrxvp3A3hF5F"></input>
             <h3 className="text-4xl text-accent">Vamos trabalhar juntos</h3>
             <p className="text-white/60">Se você tem uma ideia, um projeto ou apenas quer trocar uma ideia, estou aqui para ouvir! Entre em contato através de um dos canais disponíveis e vamos conversar.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input type="text" name="nome" placeholder="Nome" required />
               <Input type="text" name="sobrenome" placeholder="Sobrenome" required />
               <Input type="email" name="email" placeholder="Email" required />
-              <Input type="tel" name="telefone" placeholder="Telefone" required />
+              <Input type="tel" name="telefone" placeholder="Telefone" required value={phone} onChange={(e) => formatPhoneNumber(e.target.value)} />
             </div>
-            <Select>
+            <Select value={selectedService} onValueChange={handleSelectChange}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Selecione um serviço (opcional)" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Selecione um serviço</SelectLabel>
-                  <SelectItem value="est">Web Development</SelectItem>
-                  <SelectItem value="cst">UI/UX Design</SelectItem>
-                  <SelectItem value="mst">Logo Design</SelectItem>
+                  <SelectItem value="Web Development">Web Development</SelectItem>
+                  <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                  <SelectItem value="Logo Design">Logo Design</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
+            <input type="hidden" name="service" value={selectedService} />
             <Textarea name="mensagem" placeholder="Escreva sua mensagem aqui" required className="h-[200px]" />
             <Button type="submit" size="md" className="max-w-40 bg-accent hover:bg-accent-hover">Enviar</Button>
           </form>
