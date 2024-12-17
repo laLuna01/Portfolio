@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <Header />
         <StairTransition />
         <PageTransition>
-          {children}
+          { children }
         </PageTransition>
       </body>
     </html>

@@ -9,6 +9,7 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { RiGraduationCapFill, RiBuilding3Fill } from "react-icons/ri";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -18,6 +19,7 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const about = {
   title: "About Me",
@@ -171,16 +173,19 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }} 
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 xl:mb-12 mb-4" 
     >
       <div className="container mx-auto">
         <Tabs defaultValue="about" className="flex flex-col xl:flex-row gap-[60px]">
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="about">About me</TabsTrigger>
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-          </TabsList>
+          <div className="flex flex-col gap-7 relative w-full max-w-[380px] mx-auto xl:mx-0">
+            <TabsList className="flex flex-col gap-6">
+              <TabsTrigger value="about">About me</TabsTrigger>
+              <TabsTrigger value="experience">Experience</TabsTrigger>
+              <TabsTrigger value="education">Education</TabsTrigger>
+              <TabsTrigger value="skills">Skills</TabsTrigger>
+            </TabsList>
+            <Image alt="girl coding" src="/assets/resume/resume.png" layout="responsive" width={380} height={368} quality={100} className="hidden xl:block" />
+          </div>
 
           <div className="min-h-[70vh] w-full">
             <TabsContent value="about" className="w-full">
@@ -210,7 +215,7 @@ const Resume = () => {
                         <span className="text-accent">{item.duration}</span>
                         <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
                         <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <RiBuilding3Fill className="text-accent" />
                           <p className="text-white/60">{item.company}</p>
                         </div>
                       </li>
@@ -230,7 +235,7 @@ const Resume = () => {
                         <span className="text-accent">{item.duration}</span>
                         <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
                         <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <RiGraduationCapFill className="text-accent" />
                           <p className="text-white/60">{item.institution}</p>
                         </div>
                       </li>

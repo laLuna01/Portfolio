@@ -31,7 +31,7 @@ const Stairs = () => {
                 ease: "easeInOut",
                 delay: reverseIndex(index) * 0.1,
             }}
-            className={`h-full w-full relative ${index % 2 === 0 ? 'bg-accent-hover/80' : 'bg-accent-hover/90'}`}
+            className={`h-full w-full relative ${index % 2 === 0 ? 'bg-[#8f36cf]' : 'bg-accent-hover'}`}
         />
     })}
   </>;

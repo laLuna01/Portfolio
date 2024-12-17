@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const socials = [
   {
@@ -11,11 +11,11 @@ const socials = [
     path: "https://www.linkedin.com/in/luana-sousa-matos-a00462232/"
   },
   {
-    icon: <FaYoutube />,
-    path: "/"
+    icon: <FaInstagram />,
+    path: "https://www.instagram.com/lua.matos01/"
   },
   {
-    icon: <FaTwitter />,
+    icon: <FaTiktok />,
     path: "/"
   },
 ]

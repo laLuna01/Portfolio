@@ -23,3 +23,14 @@
     -webkit-text-stroke: 1px #d59bff;
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(13, 11, 17);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c675ff, rgb(52, 1, 65));
+  border-radius: 10px;
+}
