@@ -27,26 +27,17 @@ module.exports = {
 				DEFAULT: "#cc85ff",
 				hover: "#a238ee"
 			},
-			accent1: {
-				DEFAULT: "#ff83f4",
-				hover: "#f01cdd"
-			},
-			accent2: {
-				DEFAULT: "#fff78b",
-				hover: "#ffed00"
-			},
-			accent3: {
-				DEFAULT: "#92e0ff",
-				hover: "#00daf2"
-			},
   			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
+  			foreground: 'var(--foreground)',
   		},
   		borderRadius: {
   			lg: '0.5rem',
   			md: 'calc(0.5rem - 2px)',
   			sm: 'calc(0.5rem - 4px)'
-  		}
+  		},
+		animation: {
+			'spin-slow': 'spin 5s linear infinite',
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],

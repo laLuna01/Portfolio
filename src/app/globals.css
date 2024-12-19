@@ -18,7 +18,6 @@
   .text-outline {
     -webkit-text-stroke: 1px #ffffff;
   }
-  
   .text-outline-hover {
     -webkit-text-stroke: 1px #d59bff;
   }
