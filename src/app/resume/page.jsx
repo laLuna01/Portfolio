@@ -7,9 +7,16 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaBootstrap,
+  FaPython,
+  FaJava,
+  FaDocker,
+  FaWordpress
 } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiTypescript, SiSpring, SiDotnet } from "react-icons/si";
 import { RiGraduationCapFill, RiBuilding3Fill } from "react-icons/ri";
+import { TbBrandCSharp, TbSql, TbBrandKotlin } from "react-icons/tb";
+import { IoLogoFirebase } from "react-icons/io5";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -126,41 +133,89 @@ const education = {
 };
 
 const skills = {
-  title: "My skills",
+  title: "Minhas skills",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque inventore sequi quia molestiae iure necessitatibus eum, fugit dolorum commodi eius unde deleniti, ea reiciendis aut? Maxime delectus quia rerum?",
+    "Nesta seção, você encontra as principais ferramentas e tecnologias que venho estudando e aprimorando. Meu objetivo é continuar desenvolvendo minhas habilidades e acompanhando as tendências do setor de tecnologia.",
   items: [
     {
-      icon: <FaHtml5 />,
+      icon: <FaHtml5 className="group-hover:scale-125 transition-all duration-500" />,
       name: "HTML5",
     },
     {
-      icon: <FaCss3 />,
+      icon: <FaCss3 className="group-hover:scale-125 transition-all duration-500" />,
       name: "CSS3",
     },
     {
-      icon: <FaJs />,
+      icon: <FaJs className="group-hover:scale-125 transition-all duration-500" />,
       name: "JavaScript",
     },
     {
-      icon: <FaReact />,
+      icon: <SiTypescript className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Typescript",
+    },
+    {
+      icon: <FaReact className="group-hover:scale-125 transition-all duration-500" />,
       name: "React.js",
     },
     {
-      icon: <FaNodeJs />,
+      icon: <FaNodeJs className="group-hover:scale-125 transition-all duration-500" />,
       name: "Node.js",
     },
     {
-      icon: <SiNextdotjs />,
+      icon: <SiNextdotjs className="group-hover:scale-125 transition-all duration-500" />,
       name: "Next.js",
     },
     {
-      icon: <SiTailwindcss />,
+      icon: <SiTailwindcss className="group-hover:scale-125 transition-all duration-500" />,
       name: "Tailwind CSS",
     },
     {
-      icon: <FaFigma />,
+      icon: <FaBootstrap className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Bootstrap",
+    },
+    {
+      icon: <TbBrandKotlin className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Kotlin",
+    },
+    {
+      icon: <FaPython className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Python",
+    },
+    {
+      icon: <FaJava className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Java",
+    },
+    {
+      icon: <TbBrandCSharp className="group-hover:scale-125 transition-all duration-500" />,
+      name: "C#",
+    },
+    {
+      icon: <SiSpring className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Spring Boot",
+    },
+    {
+      icon: <SiDotnet className="group-hover:scale-125 transition-all duration-500" />,
+      name: ".NET",
+    },
+    {
+      icon: <TbSql className="group-hover:scale-125 transition-all duration-500" />,
+      name: "SQL",
+    },
+    {
+      icon: <IoLogoFirebase className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Firebase",
+    },
+    {
+      icon: <FaDocker className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Docker",
+    },
+    {
+      icon: <FaFigma className="group-hover:scale-125 transition-all duration-500" />,
       name: "Figma",
+    },
+    {
+      icon: <FaWordpress className="group-hover:scale-125 transition-all duration-500" />,
+      name: "Wordpress",
     },
   ],
 };
@@ -257,7 +312,7 @@ const Resume = () => {
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">{item.icon}</div>
+                              <div className="text-6xl group-hover:text-accent">{item.icon}</div>
                             </TooltipTrigger>
                             <TooltipContent>
                               <p>{item.name}</p>
