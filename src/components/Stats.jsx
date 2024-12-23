@@ -9,7 +9,7 @@ const stats = [
         text: "Anos de experiência"
     },
     {
-        num: 0,
+        num: 30,
         text: "Repositórios publicados"
     },
     {
@@ -17,7 +17,7 @@ const stats = [
         text: "Linguagens de programação"
     },
     {
-        num: 0,
+        num: 100,
         text: "Commits feitos"
     },
 ]
@@ -29,7 +29,7 @@ const Stats = () => {
             text: "Anos de experiência"
         },
         {
-            num: 0,
+            num: 30,
             text: "Repositórios publicados"
         },
         {
@@ -37,7 +37,7 @@ const Stats = () => {
             text: "Linguagens de programação"
         },
         {
-            num: 0,
+            num: 100,
             text: "Commits feitos"
         },
     ]);

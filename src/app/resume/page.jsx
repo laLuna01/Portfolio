@@ -29,33 +29,32 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const about = {
-  title: "About Me",
-  description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque inventore sequi quia molestiae iure necessitatibus eum, fugit dolorum commodi eius unde deleniti, ea reiciendis aut? Maxime delectus quia rerum?",
+  title: "Sobre mim",
+  description: <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0"><br/>Sou desenvolvedora full stack com experiência prática e acadêmica em tecnologias de back-end e front-end, além de habilidades em análise de dados e machine learning. Atualmente, estou aprofundando meus conhecimentos na faculdade, explorando áreas como DevOps com Azure Cloud e Testes/Quality Assurance.<br/><br/>Minhas principais tecnologias incluem Spring Boot, Python, Next.js e SQL. Tenho experiência em projetos variados, como manutenção de sites e lojas virtuais, implementação de automações, personalização de interfaces e design. Também participei de projetos acadêmicos full stack para empresas como Hapvida e Salesforce, com foco em resolver problemas, promover acessibilidade e adotar práticas sustentáveis.<br/><br/>Sou uma pessoa calma, mas também animada e engajada. Minha trajetória é marcada por esforço e dedicação, sempre impulsionada por um desejo constante de aprender. Valorizo uma boa comunicação e o trabalho em equipe e estou sempre pronta para aplicar minhas habilidades em projetos que tragam impacto positivo.</p>,
   info: [
     {
-      fieldName: "Name",
-      fieldValue: "Luana Matos",
+      fieldName: "Nome",
+      fieldValue: "Luana Sousa Matos",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "(+55) 11 98516-5812",
+      fieldName: "Idade",
+      fieldValue: new Date().getFullYear() - 2004 + " anos",
     },
     {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
+      fieldName: "Experiência",
+      fieldValue: new Date().getFullYear() - 2022 + " anos",
     },
     {
-      fieldName: "Nationality",
-      fieldValue: "Brazillian",
+      fieldName: "Nacionalidade",
+      fieldValue: "Brasileira",
     },
     {
       fieldName: "Freelance",
-      fieldValue: "Available",
+      fieldValue: "Disponível",
     },
     {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish, Portuguese",
+      fieldName: "Idiomas",
+      fieldValue: "Português, Inglês e Espanhol",
     },
     {
       fieldName: "Email",
@@ -66,68 +65,64 @@ const about = {
 
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  title: "Minha experiência",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque inventore sequi quia molestiae iure necessitatibus eum, fugit dolorum commodi eius unde deleniti, ea reiciendis aut? Maxime delectus quia rerum?",
+    "Nesta seção, apresento minhas experiências profissionais. Acredito que cada uma das oportunidades que tive foram importantes para o meu crescimento técnico e profissional.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Enfermix",
+      position: "Suporte de TI e Manutenção",
+      duration: "2023 - 2024",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
-    },
-    {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
+      company: "ICV Brasil",
+      position: "Suporte e Transformação Digital",
+      duration: "2023",
     },
   ],
 };
 
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
+  title: "Minha educação",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque inventore sequi quia molestiae iure necessitatibus eum, fugit dolorum commodi eius unde deleniti, ea reiciendis aut? Maxime delectus quia rerum?",
+    "Aqui estão os cursos e formações que fazem parte da minha jornada acadêmica. Busco constantemente ampliar meus conhecimentos e me manter atualizada na área de tecnologia.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "FIAP",
+      degree: "Análise e Desenvolvimento de Sistemas",
+      duration: "2023 - 2025",
     },
     {
-      institution: "Codecamy",
-      degree: "Front-End Track",
-      duration: "2022",
+      institution: "ETEC",
+      degree: "Ensino técnico integrado ao médio (TI)",
+      duration: "2020 - 2022",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
+      institution: "HarvardX",
+      degree: "CS50's Introduction to Computer Science",
+      duration: "2024",
     },
     {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
+      institution: "FreeCodeCamp e Microsoft",
+      degree: "Foundational C# with Microsoft",
+      duration: "2024",
     },
     {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2016 - 2018",
+      institution: "Alura",
+      degree: "Aprenda a programar em Java com Orientação a Objetos",
+      duration: "2024",
+    },
+    {
+      institution: "Alura",
+      degree: "WordPress: crie sites do zero",
+      duration: "2024",
+    },
+    
+    {
+      institution: "Alura",
+      degree: "A partir do zero: iniciante em programação",
+      duration: "2024",
     },
   ],
 };
@@ -135,7 +130,7 @@ const education = {
 const skills = {
   title: "Minhas skills",
   description:
-    "Nesta seção, você encontra as principais ferramentas e tecnologias que venho estudando e aprimorando. Meu objetivo é continuar desenvolvendo minhas habilidades e acompanhando as tendências do setor de tecnologia.",
+    "Nesta seção, você encontra as principais ferramentas e tecnologias que venho estudando e aprimorando. Meu objetivo é continuar desenvolvendo minhas habilidades e acompanhando as tendências.",
   items: [
     {
       icon: <FaHtml5 className="group-hover:scale-125 transition-all duration-500" />,
@@ -234,9 +229,9 @@ const Resume = () => {
         <Tabs defaultValue="about" className="flex flex-col xl:flex-row gap-[60px]">
           <div className="flex flex-col gap-7 relative w-full max-w-[380px] mx-auto xl:mx-0">
             <TabsList className="flex flex-col gap-6">
-              <TabsTrigger value="about">About me</TabsTrigger>
-              <TabsTrigger value="experience">Experience</TabsTrigger>
-              <TabsTrigger value="education">Education</TabsTrigger>
+              <TabsTrigger value="about">Sobre</TabsTrigger>
+              <TabsTrigger value="experience">Experiência</TabsTrigger>
+              <TabsTrigger value="education">Educação</TabsTrigger>
               <TabsTrigger value="skills">Skills</TabsTrigger>
             </TabsList>
             <Image alt="girl coding" src="/assets/resume/resume.png" layout="responsive" width={380} height={368} quality={100} className="hidden xl:block" />
@@ -246,16 +241,16 @@ const Resume = () => {
             <TabsContent value="about" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                    {about.info.map((item, index) => {
-                      return <li key={index} className="flex justify-center items-center xl:justify-start gap-4">
-                        <span className="text-accent">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
-                      </li>
-                    })}
-                  </ul>
+                <ScrollArea className="h-[550px]">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return <li key={index} className="flex justify-center items-center xl:justify-start gap-4">
+                      <span className="text-accent">{item.fieldName}</span>
+                      <span className="text-xl">{item.fieldValue}</span>
+                    </li>
+                  })}
+                </ul>
+                {about.description}
                 </ScrollArea>
               </div>
             </TabsContent>
@@ -286,7 +281,7 @@ const Resume = () => {
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index) => {
-                      return <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                      return <li key={index} className="bg-[#232329] h-[210px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                         <span className="text-accent">{item.duration}</span>
                         <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
                         <div className="flex items-center gap-3">
