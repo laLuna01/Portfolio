@@ -47,7 +47,7 @@ const projects = [
     title: "Salesforce ++",
     description: "Portal acessível e inclusivo da Salesforce, com navegação simples, intuitiva e visualmente limpa. Foi criado para atender a necessidades de acessibilidade, como: suporte aos espectros do daltonismo, ajuste de tamanhos de texto e elementos, compatibilidade com leitores de tela e uso de uma linguagem mais simples e objetiva.",
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Next.js" }, { name: "Java" }, { name: "SQL" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/thumb4.png",
     live: "https://salesforce-challenge-kohl.vercel.app/",
     github: "https://github.com/laLuna01/Salesforce-Challenge",
   },
