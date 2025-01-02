@@ -22,8 +22,6 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#a238ee" />
         <meta name="msapplication-navbutton-color" content="#a238ee" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#a238ee" />
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
       </head>
       <body className={jetBrainsMono.variable}>
         <Header />
