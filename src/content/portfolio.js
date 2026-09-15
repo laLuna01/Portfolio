@@ -29,6 +29,13 @@ export const portfolioContent = {
     trajectory: {
       title: "Trajetória",
       intro: "Experiência, formação e aprendizado contínuo.",
+      labels: {
+        eyebrow: "trajetoria.log",
+        profileWindow: "perfil.txt",
+        experienceEyebrow: "01 / experiencia",
+        educationWindow: "formacao.log",
+        certificationsWindow: "certificacoes.log",
+      },
       personal: {
         title: "Perfil",
         summary: "Sou uma pessoa calma, animada e engajada, movida pelo desejo constante de aprender.",
@@ -125,6 +132,13 @@ export const portfolioContent = {
     trajectory: {
       title: "Journey",
       intro: "Experience, education, and continuous learning.",
+      labels: {
+        eyebrow: "journey.log",
+        profileWindow: "profile.txt",
+        experienceEyebrow: "01 / experience",
+        educationWindow: "education.log",
+        certificationsWindow: "certifications.log",
+      },
       personal: {
         title: "Profile",
         summary: "I am a calm, enthusiastic, and engaged person, driven by a constant desire to learn.",
