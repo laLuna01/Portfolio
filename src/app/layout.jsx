@@ -4,8 +4,8 @@ import Header from "@/components/layout/Header";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 
 export const metadata = {
-  title: "Luana Matos | Desenvolvedora Fullstack",
-  description: "Portfólio profissional de Luana Matos, desenvolvedora Fullstack.",
+  title: "Luana Matos — Desenvolvedora Fullstack",
+  description: "Luana Matos — Desenvolvedora Fullstack",
 };
 
 const inter = Inter({
