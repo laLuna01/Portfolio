@@ -1,37 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
-import Social from "@/components/Social";
-import Photo from "@/components/Photo";
-import Stats from "@/components/Stats";
+"use client";
 
-const Home = () => {
-  return <section className="h-full xl:mb-12 mb-4">
-    <div className="container mx-auto h-full">
-      <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-        <div className="text-center xl:text-left order-2 xl:order-none">
-          <span className="text-xl text-accent">Desenvolvedora de Software</span>
-          <h1 className="h1 mb-6">Olá, eu sou<br/> <span className="text-accent-hover">Luana Matos</span></h1>
-          <p className="max-w-[500px] mb-9 text-white/80">Sou uma dev full stack que gosta muito de aprender. Aqui, você encontrará meus projetos, habilidades e um pouco sobre mim :)</p>
-          <div className="flex flex-col xl:flex-row items-center gap-8">
-            <a href="https://docs.google.com/document/d/1NLy-xrDUSmtQUOJsvggYuGZ5m_hkEi2xgxiOvyWz9cQ/export?format=pdf" download="Curriculo.pdf">
-              <Button variant="outline" size="lg" className="uppercase flex items-center gap-3 border-accent text-accent hover:bg-accent-hover hover:border-accent-hover">
-                <span>Baixar Currículo</span>
-                <FiDownload className="text-xl" />
-              </Button>
-            </a>
-            <div className="mb-8 xl:mb-0">
-              <Social containerStyles="flex gap-6" iconStyles="w-9 h-9 border rounded-full flex justify-center items-center text-accent hover:bg-accent border-accent text-base hover:text-primary hover:transition-all duration-500" />
-            </div>
-          </div>
+import { DesktopScene } from "@/components/home/DesktopScene";
+import { ExternalLink } from "@/components/ui/ExternalLink";
+import { usePortfolio } from "@/i18n/usePortfolio";
+
+export default function Home() {
+  const { content } = usePortfolio();
+  const { identity, home } = content;
+
+  return (
+    <main className="page-shell">
+      <section className="container grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
+        <div className="max-w-xl">
+          <p className="interface-label m-0 text-sm font-bold uppercase tracking-[0.12em] text-[var(--accent)]">
+            {home.role}
+          </p>
+          <h1 className="mt-3 text-5xl font-bold leading-none tracking-[-0.05em] sm:text-6xl">
+            {identity.name}
+          </h1>
+          <p className="mt-6 max-w-lg text-lg text-[var(--muted)]">{home.summary}</p>
+
+          <nav className="mt-8 flex flex-wrap gap-x-5 gap-y-3" aria-label="Professional links">
+            <ExternalLink href={identity.github}>GitHub</ExternalLink>
+            <ExternalLink href={identity.linkedin}>LinkedIn</ExternalLink>
+            <ExternalLink href={`mailto:${identity.email}`}>Email</ExternalLink>
+          </nav>
         </div>
-        <div className="order-1 xl:order-none mb-8 xl:mb-0">
-          <Photo />
-        </div>
-      </div>
-    </div>
-    <Stats />
-  </section>;
+
+        <DesktopScene name={identity.name} role={home.role} />
+      </section>
+    </main>
+  );
 }
-
-export default Home;
- 
