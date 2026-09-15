@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import Header from "@/components/Header";
+import Header from "@/components/layout/Header";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 
 export const metadata = {
