@@ -424,6 +424,130 @@ button:disabled {
   text-underline-offset: 0.2em;
 }
 
+.trajectory {
+  display: grid;
+  gap: 3rem;
+}
+
+.trajectory__personal,
+.trajectory__experience,
+.trajectory__credentials {
+  min-width: 0;
+}
+
+.trajectory__section-heading {
+  margin-bottom: 1.25rem;
+}
+
+.trajectory__section-heading .interface-label {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.trajectory__section-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.trajectory__personal-copy {
+  max-width: 44rem;
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  list-style: none;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.3125rem;
+  width: 1px;
+  background: var(--line);
+  content: "";
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__item::before {
+  position: absolute;
+  top: 1.25rem;
+  left: -1.5rem;
+  width: 0.6875rem;
+  height: 0.6875rem;
+  border: 2px solid var(--accent);
+  background: var(--page);
+  content: "";
+}
+
+.timeline__entry {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0.25rem 0.25rem 0 var(--shadow);
+  padding: 1rem;
+}
+
+.timeline__period,
+.trajectory__period {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.timeline__company,
+.trajectory__credential h3 {
+  margin: 0.25rem 0 0;
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+.timeline__role,
+.trajectory__credential p:last-child {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.trajectory__credentials-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.trajectory__credential-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trajectory__credential {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.trajectory__credential:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 @media (min-width: 48rem) {
   .container {
     width: min(100% - 4rem, 72rem);
@@ -436,6 +560,19 @@ button:disabled {
   .window-frame__content,
   .card {
     padding: 1.25rem;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline__item::before {
+    left: -2rem;
+  }
+
+  .trajectory__credentials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
   }
 
   .site-header__desktop {

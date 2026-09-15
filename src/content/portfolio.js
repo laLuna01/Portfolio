@@ -28,10 +28,71 @@ export const portfolioContent = {
     },
     trajectory: {
       title: "Trajetória",
-      personal: "Conteúdo pessoal em revisão.",
-      experience: [],
-      education: [],
-      certifications: [],
+      intro: "Experiência, formação e aprendizado contínuo.",
+      personal: {
+        title: "Perfil",
+        summary: "Sou uma pessoa calma, animada e engajada, movida pelo desejo constante de aprender.",
+      },
+      experience: {
+        title: "Experiência profissional",
+        items: [
+          {
+            company: "Enfermix",
+            role: "Suporte de TI e Manutenção",
+            period: "2023 - 2024",
+          },
+          {
+            company: "ICV Brasil",
+            role: "Suporte e Transformação Digital",
+            period: "2023",
+          },
+        ],
+      },
+      education: {
+        title: "Formação acadêmica",
+        items: [
+          {
+            institution: "FIAP",
+            course: "Análise e Desenvolvimento de Sistemas",
+            period: "2023 - 2025",
+          },
+          {
+            institution: "ETEC",
+            course: "Ensino técnico integrado ao médio (TI)",
+            period: "2020 - 2022",
+          },
+        ],
+      },
+      certifications: {
+        title: "Certificações e cursos",
+        items: [
+          {
+            institution: "HarvardX",
+            course: "CS50's Introduction to Computer Science",
+            period: "2024",
+          },
+          {
+            institution: "FreeCodeCamp e Microsoft",
+            course: "Foundational C# with Microsoft",
+            period: "2024",
+          },
+          {
+            institution: "Alura",
+            course: "Aprenda a programar em Java com Orientação a Objetos",
+            period: "2024",
+          },
+          {
+            institution: "Alura",
+            course: "WordPress: crie sites do zero",
+            period: "2024",
+          },
+          {
+            institution: "Alura",
+            course: "A partir do zero: iniciante em programação",
+            period: "2024",
+          },
+        ],
+      },
     },
     skills: { title: "Skills", groups: [] },
     projects: { title: "Projetos", items: [] },
@@ -63,10 +124,71 @@ export const portfolioContent = {
     },
     trajectory: {
       title: "Journey",
-      personal: "Personal content under review.",
-      experience: [],
-      education: [],
-      certifications: [],
+      intro: "Experience, education, and continuous learning.",
+      personal: {
+        title: "Profile",
+        summary: "I am a calm, enthusiastic, and engaged person, driven by a constant desire to learn.",
+      },
+      experience: {
+        title: "Professional experience",
+        items: [
+          {
+            company: "Enfermix",
+            role: "IT Support and Maintenance",
+            period: "2023 - 2024",
+          },
+          {
+            company: "ICV Brasil",
+            role: "Support and Digital Transformation",
+            period: "2023",
+          },
+        ],
+      },
+      education: {
+        title: "Academic education",
+        items: [
+          {
+            institution: "FIAP",
+            course: "Systems Analysis and Development",
+            period: "2023 - 2025",
+          },
+          {
+            institution: "ETEC",
+            course: "Integrated technical high school education (IT)",
+            period: "2020 - 2022",
+          },
+        ],
+      },
+      certifications: {
+        title: "Certifications and courses",
+        items: [
+          {
+            institution: "HarvardX",
+            course: "CS50's Introduction to Computer Science",
+            period: "2024",
+          },
+          {
+            institution: "FreeCodeCamp and Microsoft",
+            course: "Foundational C# with Microsoft",
+            period: "2024",
+          },
+          {
+            institution: "Alura",
+            course: "Learn to program in Java with Object-Oriented Programming",
+            period: "2024",
+          },
+          {
+            institution: "Alura",
+            course: "WordPress: build websites from scratch",
+            period: "2024",
+          },
+          {
+            institution: "Alura",
+            course: "From scratch: programming beginner",
+            period: "2024",
+          },
+        ],
+      },
     },
     skills: { title: "Skills", groups: [] },
     projects: { title: "Projects", items: [] },
