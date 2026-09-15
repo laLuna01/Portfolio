@@ -26,18 +26,22 @@ describe("WindowFrame", () => {
     expect(screen.getByText("Selected work.")).toBeInTheDocument();
   });
 
-  it("marks external links as opening in a new tab", () => {
-    render(<ExternalLink href="https://github.com">GitHub</ExternalLink>);
+  it("uses the provided localized new-tab suffix in the accessible name", () => {
+    render(
+      <ExternalLink href="https://github.com" newTabSuffix="abre em nova aba">
+        GitHub
+      </ExternalLink>,
+    );
 
-    expect(screen.getByRole("link", { name: "GitHub (opens in a new tab)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "GitHub (abre em nova aba)" })).toHaveAttribute(
       "href",
       "https://github.com",
     );
-    expect(screen.getByRole("link", { name: "GitHub (opens in a new tab)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "GitHub (abre em nova aba)" })).toHaveAttribute(
       "target",
       "_blank",
     );
-    expect(screen.getByRole("link", { name: "GitHub (opens in a new tab)" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "GitHub (abre em nova aba)" })).toHaveAttribute(
       "rel",
       "noreferrer noopener",
     );

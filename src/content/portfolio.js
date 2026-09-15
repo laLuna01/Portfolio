@@ -21,6 +21,9 @@ export const portfolioContent = {
       contact: "Contato",
       resume: "CV",
     },
+    accessibility: {
+      externalLinkSuffix: "abre em nova aba",
+    },
     home: {
       role: "Desenvolvedora Fullstack",
       greeting: "Olá, sou Luana Matos.",
@@ -219,6 +222,9 @@ export const portfolioContent = {
       projects: "Projects",
       contact: "Contact",
       resume: "CV",
+    },
+    accessibility: {
+      externalLinkSuffix: "opens in a new tab",
     },
     home: {
       role: "Fullstack Developer",

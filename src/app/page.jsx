@@ -21,9 +21,24 @@ export default function Home() {
           <p className="mt-6 max-w-lg text-lg text-[var(--muted)]">{home.summary}</p>
 
           <nav className="mt-8 flex flex-wrap gap-x-5 gap-y-3" aria-label="Professional links">
-            <ExternalLink href={identity.github}>GitHub</ExternalLink>
-            <ExternalLink href={identity.linkedin}>LinkedIn</ExternalLink>
-            <ExternalLink href={`mailto:${identity.email}`}>Email</ExternalLink>
+            <ExternalLink
+              href={identity.github}
+              newTabSuffix={content.accessibility.externalLinkSuffix}
+            >
+              GitHub
+            </ExternalLink>
+            <ExternalLink
+              href={identity.linkedin}
+              newTabSuffix={content.accessibility.externalLinkSuffix}
+            >
+              LinkedIn
+            </ExternalLink>
+            <ExternalLink
+              href={`mailto:${identity.email}`}
+              newTabSuffix={content.accessibility.externalLinkSuffix}
+            >
+              Email
+            </ExternalLink>
           </nav>
         </div>
 

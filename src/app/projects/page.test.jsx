@@ -17,7 +17,11 @@ describe("ProjectsPage", () => {
     expect(screen.getByRole("heading", { name: "GetCards" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Nike Page" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Salesforce ++" })).toBeVisible();
-    expect(screen.getAllByRole("link", { name: /repositório/i })).toHaveLength(4);
-    expect(screen.getAllByRole("link", { name: /ver projeto/i })).toHaveLength(2);
+    expect(
+      screen.getAllByRole("link", { name: "Repositório (abre em nova aba)" }),
+    ).toHaveLength(4);
+    expect(
+      screen.getAllByRole("link", { name: "Ver projeto (abre em nova aba)" }),
+    ).toHaveLength(2);
   });
 });

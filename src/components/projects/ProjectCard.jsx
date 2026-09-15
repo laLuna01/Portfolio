@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { ExternalLink } from "@/components/ui/ExternalLink";
+import { portfolioContent } from "@/content/portfolio";
 
-export function ProjectCard({ project, labels }) {
+const defaultLabels = portfolioContent.en.projects.labels;
+const defaultNewTabSuffix = portfolioContent.en.accessibility.externalLinkSuffix;
+
+export function ProjectCard({ project }) {
+  const labels = project.labels ?? defaultLabels;
+  const newTabSuffix = project.newTabSuffix ?? defaultNewTabSuffix;
+
   return (
     <article className="project-card">
       {project.image ? (
@@ -31,9 +38,15 @@ export function ProjectCard({ project, labels }) {
         </ul>
 
         <div className="project-card__actions">
-          {project.live ? <ExternalLink href={project.live}>{labels.demo}</ExternalLink> : null}
+          {project.live ? (
+            <ExternalLink href={project.live} newTabSuffix={newTabSuffix}>
+              {labels.demo}
+            </ExternalLink>
+          ) : null}
           {project.github ? (
-            <ExternalLink href={project.github}>{labels.repository}</ExternalLink>
+            <ExternalLink href={project.github} newTabSuffix={newTabSuffix}>
+              {labels.repository}
+            </ExternalLink>
           ) : null}
         </div>
       </div>

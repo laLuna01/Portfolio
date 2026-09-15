@@ -18,7 +18,14 @@ export default function ProjectsPage() {
         />
         <div className="projects-grid">
           {projects.items.map((project) => (
-            <ProjectCard key={project.title} project={project} labels={projects.labels} />
+            <ProjectCard
+              key={project.title}
+              project={{
+                ...project,
+                labels: projects.labels,
+                newTabSuffix: content.accessibility.externalLinkSuffix,
+              }}
+            />
           ))}
         </div>
       </div>
