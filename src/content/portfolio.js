@@ -204,13 +204,54 @@ export const portfolioContent = {
     },
     contact: {
       title: "Contato",
-      intro: "Vamos conversar.",
-      fields: {
-        name: "Nome",
-        email: "E-mail",
-        subject: "Assunto",
-        message: "Mensagem",
-        submit: "Enviar",
+      intro: "Vamos conversar sobre projetos, oportunidades e tecnologia.",
+      label: "contato.mail",
+      form: {
+        windowTitle: "nova-mensagem.mail",
+        title: "Envie uma mensagem",
+        description: "Preencha os campos abaixo e responderei pelo seu e-mail.",
+        fields: {
+          name: "Nome",
+          email: "E-mail",
+          subject: "Assunto",
+          message: "Mensagem",
+        },
+        actions: {
+          submit: "Enviar mensagem",
+          submitting: "Enviando...",
+        },
+        validation: {
+          required: "Este campo é obrigatório.",
+          email: "Informe um e-mail válido.",
+        },
+        status: {
+          submitting: "Enviando sua mensagem...",
+          success: "Mensagem enviada com sucesso.",
+          error: "Não foi possível enviar a mensagem. Tente novamente.",
+        },
+      },
+      channels: {
+        label: "links.url",
+        title: "Canais diretos",
+        description: "Se preferir, fale comigo por um destes canais.",
+        email: {
+          number: "01",
+          label: "email",
+          title: "E-mail",
+          action: "Enviar e-mail",
+        },
+        linkedin: {
+          number: "02",
+          label: "linkedin",
+          title: "LinkedIn",
+          action: "Abrir LinkedIn",
+        },
+        github: {
+          number: "03",
+          label: "github",
+          title: "GitHub",
+          action: "Abrir GitHub",
+        },
       },
     },
   },
@@ -406,13 +447,54 @@ export const portfolioContent = {
     },
     contact: {
       title: "Contact",
-      intro: "Let’s talk.",
-      fields: {
-        name: "Name",
-        email: "Email",
-        subject: "Subject",
-        message: "Message",
-        submit: "Send",
+      intro: "Let’s talk about projects, opportunities, and technology.",
+      label: "contact.mail",
+      form: {
+        windowTitle: "new-message.mail",
+        title: "Send a message",
+        description: "Fill in the fields below and I’ll reply by email.",
+        fields: {
+          name: "Name",
+          email: "Email",
+          subject: "Subject",
+          message: "Message",
+        },
+        actions: {
+          submit: "Send message",
+          submitting: "Sending...",
+        },
+        validation: {
+          required: "This field is required.",
+          email: "Enter a valid email address.",
+        },
+        status: {
+          submitting: "Sending your message...",
+          success: "Message sent successfully.",
+          error: "We couldn’t send your message. Please try again.",
+        },
+      },
+      channels: {
+        label: "links.url",
+        title: "Direct channels",
+        description: "If you prefer, reach me through one of these channels.",
+        email: {
+          number: "01",
+          label: "email",
+          title: "Email",
+          action: "Send email",
+        },
+        linkedin: {
+          number: "02",
+          label: "linkedin",
+          title: "LinkedIn",
+          action: "Open LinkedIn",
+        },
+        github: {
+          number: "03",
+          label: "github",
+          title: "GitHub",
+          action: "Open GitHub",
+        },
       },
     },
   },
