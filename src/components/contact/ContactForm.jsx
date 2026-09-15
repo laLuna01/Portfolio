@@ -50,6 +50,18 @@ export function ContactForm({ content, submitContactImpl = submitContact }) {
     }
   };
 
+  const handleInvalid = (event) => {
+    event.preventDefault();
+
+    const { name, validity } = event.currentTarget;
+    const message = validity.typeMismatch
+      ? content.validation.email
+      : content.validation.required;
+
+    setErrors((current) => ({ ...current, [name]: message }));
+    setStatus("idle");
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -78,7 +90,6 @@ export function ContactForm({ content, submitContactImpl = submitContact }) {
     <form
       className="contact-form"
       onSubmit={handleSubmit}
-      noValidate
       aria-busy={status === "submitting"}
     >
       <div className="contact-form__heading">
@@ -95,6 +106,7 @@ export function ContactForm({ content, submitContactImpl = submitContact }) {
             name: field,
             value: values[field],
             onChange: handleChange,
+            onInvalid: handleInvalid,
             required: true,
             "aria-invalid": errors[field] ? "true" : undefined,
             "aria-describedby": errors[field] ? errorId : undefined,

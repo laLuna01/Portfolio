@@ -23,6 +23,24 @@ async function fillValidForm(user) {
 }
 
 describe("ContactForm", () => {
+  it("uses native required validity while exposing localized inline errors", async () => {
+    const user = userEvent.setup();
+    const submitContactImpl = vi.fn();
+    render(<ContactForm content={content} submitContactImpl={submitContactImpl} />);
+    const nameInput = screen.getByLabelText(content.fields.name);
+    const form = nameInput.closest("form");
+    const submitted = vi.fn();
+    form.addEventListener("submit", submitted);
+
+    expect(nameInput.validity.valueMissing).toBe(true);
+    await user.click(screen.getByRole("button", { name: content.actions.submit }));
+
+    expect(submitted).not.toHaveBeenCalled();
+    expect(submitContactImpl).not.toHaveBeenCalled();
+    expect(nameInput).toHaveAttribute("aria-invalid", "true");
+    expect(nameInput).toHaveAccessibleDescription(content.validation.required);
+  });
+
   it("shows an accessible validation message for an invalid email", async () => {
     const user = userEvent.setup();
     const submitContactImpl = vi.fn();
@@ -32,10 +50,15 @@ describe("ContactForm", () => {
     await user.type(screen.getByLabelText(content.fields.email), "email-invalido");
     await user.type(screen.getByLabelText(content.fields.subject), "Projeto");
     await user.type(screen.getByLabelText(content.fields.message), "Olá!");
+    const emailInput = screen.getByLabelText(content.fields.email);
+    const submitted = vi.fn();
+    emailInput.closest("form").addEventListener("submit", submitted);
+    expect(emailInput.validity.typeMismatch).toBe(true);
     await user.click(screen.getByRole("button", { name: content.actions.submit }));
 
+    expect(submitted).not.toHaveBeenCalled();
     expect(screen.getByRole("alert")).toHaveTextContent(content.validation.email);
-    expect(screen.getByLabelText(content.fields.email)).toHaveAttribute("aria-invalid", "true");
+    expect(emailInput).toHaveAttribute("aria-invalid", "true");
     expect(submitContactImpl).not.toHaveBeenCalled();
   });
 
