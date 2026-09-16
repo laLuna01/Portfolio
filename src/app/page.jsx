@@ -20,7 +20,10 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-lg text-lg text-[var(--muted)]">{home.summary}</p>
 
-          <nav className="mt-8 flex flex-wrap gap-x-5 gap-y-3" aria-label="Professional links">
+          <nav
+            className="mt-8 flex flex-wrap gap-x-5 gap-y-3"
+            aria-label={content.accessibility.professionalLinks}
+          >
             <ExternalLink
               href={identity.github}
               newTabSuffix={content.accessibility.externalLinkSuffix}
@@ -42,7 +45,11 @@ export default function Home() {
           </nav>
         </div>
 
-        <DesktopScene name={identity.name} role={home.role} />
+        <DesktopScene
+          name={identity.name}
+          role={home.role}
+          accessibility={content.accessibility}
+        />
       </section>
     </main>
   );

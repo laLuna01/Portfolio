@@ -9,25 +9,26 @@ import LanguageSwitch from "./LanguageSwitch";
 
 export default function MobileMenu({ links, pathname, content }) {
   const [open, setOpen] = useState(false);
+  const { accessibility } = content;
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <button className="mobile-menu__trigger" type="button" aria-label="Open navigation menu">
+        <button className="mobile-menu__trigger" type="button" aria-label={accessibility.openNavigationMenu}>
           <Menu aria-hidden="true" size={22} />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="mobile-menu__overlay" />
         <Dialog.Content className="mobile-menu__panel" aria-describedby={undefined}>
-          <Dialog.Title className="sr-only">Navigation menu</Dialog.Title>
+          <Dialog.Title className="sr-only">{accessibility.navigationMenu}</Dialog.Title>
           <Dialog.Close asChild>
-            <button className="mobile-menu__close" type="button" aria-label="Close navigation menu">
+            <button className="mobile-menu__close" type="button" aria-label={accessibility.closeNavigationMenu}>
               <X aria-hidden="true" size={22} />
             </button>
           </Dialog.Close>
 
-          <nav className="mobile-menu__links" aria-label="Primary navigation">
+          <nav className="mobile-menu__links" aria-label={accessibility.primaryNavigation}>
             {links.map((link) => {
               const active = pathname === link.href;
 

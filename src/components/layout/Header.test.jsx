@@ -50,16 +50,25 @@ describe("Header", () => {
 
     renderHeader();
 
-    const trigger = screen.getByRole("button", { name: "Open navigation menu" });
+    const trigger = screen.getByRole("button", { name: "Abrir menu de navegação" });
     trigger.focus();
     await user.keyboard("{Enter}");
 
-    const dialog = screen.getByRole("dialog", { name: "Navigation menu" });
+    const dialog = screen.getByRole("dialog", { name: "Menu de navegação" });
     expect(within(dialog).getByRole("link", { name: "Trajetória" })).toBeInTheDocument();
+    expect(within(dialog).getByRole("navigation", { name: "Navegação principal" })).toBeInTheDocument();
+    expect(within(dialog).getByLabelText("Idioma")).toBeInTheDocument();
 
     await user.keyboard("{Escape}");
 
-    expect(screen.queryByRole("dialog", { name: "Navigation menu" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("dialog", { name: "Menu de navegação" })).not.toBeInTheDocument();
     expect(trigger).toHaveFocus();
+  });
+
+  it("localizes desktop navigation and language control names", () => {
+    renderHeader();
+
+    expect(screen.getByRole("navigation", { name: "Navegação principal" })).toBeInTheDocument();
+    expect(screen.getByLabelText("Idioma")).toBeInTheDocument();
   });
 });

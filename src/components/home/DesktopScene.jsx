@@ -1,10 +1,10 @@
 import { WindowFrame } from "@/components/ui/WindowFrame";
 
-export function DesktopScene({ name, role }) {
+export function DesktopScene({ name, role, accessibility }) {
   return (
     <section
       className="relative flex flex-col gap-5 md:block md:min-h-[32rem]"
-      aria-label="Desktop workspace"
+      aria-label={accessibility.desktopWorkspace}
     >
       <WindowFrame
         title="terminal.exe"
@@ -38,7 +38,7 @@ export function DesktopScene({ name, role }) {
       >
         <div className="font-mono text-sm leading-relaxed text-[var(--muted)]">
           <p className="m-0 font-bold text-[var(--ink)]">~/portfolio</p>
-          <ul className="m-0 mt-3 grid list-none gap-1 p-0" aria-label="Portfolio files">
+          <ul className="m-0 mt-3 grid list-none gap-1 p-0" aria-label={accessibility.portfolioFiles}>
             <li>├── introduction.md</li>
             <li>├── trajectory/</li>
             <li>├── projects/</li>

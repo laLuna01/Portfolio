@@ -19,5 +19,8 @@ describe("Home", () => {
     ).toBeInTheDocument();
     expect(screen.queryByText(/commits feitos/i)).not.toBeInTheDocument();
     expect(screen.queryByRole("img", { name: /profile/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("navigation", { name: "Links profissionais" })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "Área de trabalho" })).toBeInTheDocument();
+    expect(screen.getByRole("list", { name: "Arquivos do portfólio" })).toBeInTheDocument();
   });
 });

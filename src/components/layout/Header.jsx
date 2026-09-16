@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
 
         <div className="site-header__desktop">
-          <nav className="site-header__links" aria-label="Primary navigation">
+          <nav className="site-header__links" aria-label={content.accessibility.primaryNavigation}>
             {links.map((link) => {
               const active = pathname === link.href;
 

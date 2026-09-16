@@ -3,10 +3,10 @@
 import { usePortfolio } from "@/i18n/usePortfolio";
 
 export default function LanguageSwitch() {
-  const { language, setLanguage } = usePortfolio();
+  const { language, setLanguage, content } = usePortfolio();
 
   return (
-    <div className="language-switch" aria-label="Language">
+    <div className="language-switch" aria-label={content.accessibility.language}>
       {["en", "pt"].map((option) => {
         const selected = language === option;
 

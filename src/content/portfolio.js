@@ -23,6 +23,14 @@ export const portfolioContent = {
     },
     accessibility: {
       externalLinkSuffix: "abre em nova aba",
+      primaryNavigation: "Navegação principal",
+      language: "Idioma",
+      openNavigationMenu: "Abrir menu de navegação",
+      closeNavigationMenu: "Fechar menu de navegação",
+      navigationMenu: "Menu de navegação",
+      professionalLinks: "Links profissionais",
+      desktopWorkspace: "Área de trabalho",
+      portfolioFiles: "Arquivos do portfólio",
     },
     home: {
       role: "Desenvolvedora Fullstack",
@@ -266,6 +274,14 @@ export const portfolioContent = {
     },
     accessibility: {
       externalLinkSuffix: "opens in a new tab",
+      primaryNavigation: "Primary navigation",
+      language: "Language",
+      openNavigationMenu: "Open navigation menu",
+      closeNavigationMenu: "Close navigation menu",
+      navigationMenu: "Navigation menu",
+      professionalLinks: "Professional links",
+      desktopWorkspace: "Desktop workspace",
+      portfolioFiles: "Portfolio files",
     },
     home: {
       role: "Fullstack Developer",
