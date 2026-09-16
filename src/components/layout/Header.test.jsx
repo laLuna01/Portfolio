@@ -57,7 +57,7 @@ describe("Header", () => {
     const dialog = screen.getByRole("dialog", { name: "Menu de navegação" });
     expect(within(dialog).getByRole("link", { name: "Trajetória" })).toBeInTheDocument();
     expect(within(dialog).getByRole("navigation", { name: "Navegação principal" })).toBeInTheDocument();
-    expect(within(dialog).getByLabelText("Idioma")).toBeInTheDocument();
+    expect(within(dialog).getByRole("group", { name: "Idioma" })).toBeInTheDocument();
 
     await user.keyboard("{Escape}");
 
@@ -65,10 +65,16 @@ describe("Header", () => {
     expect(trigger).toHaveFocus();
   });
 
-  it("localizes desktop navigation and language control names", () => {
+  it("localizes desktop navigation and language control group names", async () => {
+    const user = userEvent.setup();
     renderHeader();
 
     expect(screen.getByRole("navigation", { name: "Navegação principal" })).toBeInTheDocument();
-    expect(screen.getByLabelText("Idioma")).toBeInTheDocument();
+    expect(screen.getByRole("group", { name: "Idioma" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "EN" }));
+
+    expect(screen.getByRole("navigation", { name: "Primary navigation" })).toBeInTheDocument();
+    expect(screen.getByRole("group", { name: "Language" })).toBeInTheDocument();
   });
 });

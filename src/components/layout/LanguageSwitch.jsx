@@ -6,7 +6,11 @@ export default function LanguageSwitch() {
   const { language, setLanguage, content } = usePortfolio();
 
   return (
-    <div className="language-switch" aria-label={content.accessibility.language}>
+    <div
+      className="language-switch"
+      role="group"
+      aria-label={content.accessibility.language}
+    >
       {["en", "pt"].map((option) => {
         const selected = language === option;
 
