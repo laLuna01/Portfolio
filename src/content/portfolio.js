@@ -36,6 +36,16 @@ export const portfolioContent = {
       role: "Desenvolvedora Fullstack",
       greeting: "Olá, sou Luana Matos.",
       summary: "Conteúdo profissional em revisão.",
+      scene: {
+        terminalTitle: "terminal.exe",
+        identityCommand: "whoami",
+        roleCommand: "funcao",
+        explorerTitle: "explorador",
+        portfolioPath: "~/portfolio",
+        files: ["apresentacao.md", "trajetoria/", "projetos/", "contato/"],
+        statusTitle: "estado",
+        statusMessage: "sistema: pronto",
+      },
     },
     trajectory: {
       title: "Trajetória",
@@ -162,6 +172,8 @@ export const portfolioContent = {
         technologies: "Tecnologias",
         repository: "Repositório",
         demo: "Ver projeto",
+        repositoryAccessible: "Abrir repositório de {project}",
+        demoAccessible: "Ver demonstração de {project}",
       },
       items: [
         {
@@ -287,6 +299,16 @@ export const portfolioContent = {
       role: "Fullstack Developer",
       greeting: "Hi, I’m Luana Matos.",
       summary: "Professional content under review.",
+      scene: {
+        terminalTitle: "terminal.exe",
+        identityCommand: "whoami",
+        roleCommand: "role",
+        explorerTitle: "explorer",
+        portfolioPath: "~/portfolio",
+        files: ["introduction.md", "trajectory/", "projects/", "contact/"],
+        statusTitle: "status",
+        statusMessage: "system: ready",
+      },
     },
     trajectory: {
       title: "Journey",
@@ -413,6 +435,8 @@ export const portfolioContent = {
         technologies: "Technologies",
         repository: "Repository",
         demo: "View project",
+        repositoryAccessible: "Open {project} repository",
+        demoAccessible: "View {project} demo",
       },
       items: [
         {

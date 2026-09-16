@@ -40,7 +40,64 @@ describe("ProjectCard", () => {
       />,
     );
 
-    expect(screen.getByRole("link", { name: /repository/i })).toHaveAttribute("target", "_blank");
-    expect(screen.getByRole("link", { name: /view project/i })).toHaveAttribute("target", "_blank");
+    expect(screen.getByRole("link", { name: /open nike page repository/i })).toHaveAttribute(
+      "target",
+      "_blank",
+    );
+    expect(screen.getByRole("link", { name: /view nike page demo/i })).toHaveAttribute(
+      "target",
+      "_blank",
+    );
   });
+
+  it.each([
+    {
+      labels: {
+        technologies: "Tecnologias",
+        repository: "Repositório",
+        demo: "Ver projeto",
+        repositoryAccessible: "Abrir repositório de {project}",
+        demoAccessible: "Ver demonstração de {project}",
+      },
+      suffix: "abre em nova aba",
+      repositoryName: "Abrir repositório de EcoVolt (abre em nova aba)",
+      demoName: "Ver demonstração de EcoVolt (abre em nova aba)",
+    },
+    {
+      labels: {
+        technologies: "Technologies",
+        repository: "Repository",
+        demo: "View project",
+        repositoryAccessible: "Open {project} repository",
+        demoAccessible: "View {project} demo",
+      },
+      suffix: "opens in a new tab",
+      repositoryName: "Open EcoVolt repository (opens in a new tab)",
+      demoName: "View EcoVolt demo (opens in a new tab)",
+    },
+  ])(
+    "includes the project title in localized destination-specific link names",
+    ({ labels, suffix, repositoryName, demoName }) => {
+      render(
+        <ProjectCard
+          project={{
+            number: "01",
+            title: "EcoVolt",
+            category: "FullStack",
+            description: "Energy platform",
+            tags: ["Java"],
+            github: "https://github.com/laLuna01/EcoVoltJava",
+            live: "https://example.com/ecovolt",
+            labels,
+            newTabSuffix: suffix,
+          }}
+        />,
+      );
+
+      expect(screen.getByRole("link", { name: repositoryName })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: demoName })).toBeInTheDocument();
+      expect(screen.getByText(labels.repository)).toBeInTheDocument();
+      expect(screen.getByText(labels.demo)).toBeInTheDocument();
+    },
+  );
 });

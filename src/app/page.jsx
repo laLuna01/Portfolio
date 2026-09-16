@@ -36,18 +36,17 @@ export default function Home() {
             >
               LinkedIn
             </ExternalLink>
-            <ExternalLink
-              href={`mailto:${identity.email}`}
-              newTabSuffix={content.accessibility.externalLinkSuffix}
-            >
-              Email
-            </ExternalLink>
+            <a className="external-link" href={`mailto:${identity.email}`}>
+              <span>Email</span>
+              <span aria-hidden="true">↗</span>
+            </a>
           </nav>
         </div>
 
         <DesktopScene
           name={identity.name}
           role={home.role}
+          scene={home.scene}
           accessibility={content.accessibility}
         />
       </section>

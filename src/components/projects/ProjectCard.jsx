@@ -5,6 +5,10 @@ import { portfolioContent } from "@/content/portfolio";
 const defaultLabels = portfolioContent.en.projects.labels;
 const defaultNewTabSuffix = portfolioContent.en.accessibility.externalLinkSuffix;
 
+function projectLinkLabel(template, title) {
+  return template.replace("{project}", title);
+}
+
 export function ProjectCard({ project }) {
   const labels = project.labels ?? defaultLabels;
   const newTabSuffix = project.newTabSuffix ?? defaultNewTabSuffix;
@@ -39,12 +43,20 @@ export function ProjectCard({ project }) {
 
         <div className="project-card__actions">
           {project.live ? (
-            <ExternalLink href={project.live} newTabSuffix={newTabSuffix}>
+            <ExternalLink
+              href={project.live}
+              accessibleLabel={projectLinkLabel(labels.demoAccessible, project.title)}
+              newTabSuffix={newTabSuffix}
+            >
               {labels.demo}
             </ExternalLink>
           ) : null}
           {project.github ? (
-            <ExternalLink href={project.github} newTabSuffix={newTabSuffix}>
+            <ExternalLink
+              href={project.github}
+              accessibleLabel={projectLinkLabel(labels.repositoryAccessible, project.title)}
+              newTabSuffix={newTabSuffix}
+            >
               {labels.repository}
             </ExternalLink>
           ) : null}

@@ -1,7 +1,8 @@
-export function ExternalLink({ href, children, newTabSuffix }) {
+export function ExternalLink({ href, children, accessibleLabel, newTabSuffix }) {
+  const labelText = accessibleLabel ?? (typeof children === "string" ? children : undefined);
   const label =
-    typeof children === "string" && newTabSuffix
-      ? `${children} (${newTabSuffix})`
+    labelText && newTabSuffix
+      ? `${labelText} (${newTabSuffix})`
       : undefined;
 
   return (
