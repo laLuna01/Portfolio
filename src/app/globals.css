@@ -12,7 +12,9 @@
   --accent: #6559cf;
   --danger: #9a334b;
   --shadow: #c9d2ef;
-  color-scheme: light dark;
+  --overlay: rgb(9 12 23 / 0.55);
+  --image-shade: rgb(23 39 91 / 0.12);
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +28,9 @@
     --accent: #9bacf4;
     --danger: #ff9aaf;
     --shadow: #050710;
+    --overlay: rgb(5 7 16 / 0.72);
+    --image-shade: rgb(5 7 16 / 0.28);
+    color-scheme: dark;
   }
 }
 
@@ -136,7 +141,7 @@
   position: fixed;
   z-index: 40;
   inset: 0;
-  background: rgb(9 12 23 / 0.55);
+  background: var(--overlay);
 }
 
 .mobile-menu__panel {
@@ -642,7 +647,7 @@ button:disabled {
 .project-card__image::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgb(23 39 91 / 0.12));
+  background: linear-gradient(180deg, transparent 60%, var(--image-shade));
   content: "";
   pointer-events: none;
 }
