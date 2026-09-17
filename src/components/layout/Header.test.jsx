@@ -35,14 +35,32 @@ describe("Header", () => {
     });
   });
 
+  it("renders the desktop-like identity and resume controls", () => {
+    renderHeader();
+
+    const signature = screen.getByRole("link", { name: /Luana Matos\.exe/i });
+    expect(signature.querySelector('[data-pixel-icon="computer"]')).toBeInTheDocument();
+    expect(within(signature).getByText("software developer")).toBeInTheDocument();
+
+    const resume = screen.getByRole("link", { name: "CV" });
+    expect(resume).toHaveClass("header-resume-link--button");
+    expect(resume.querySelector('[data-pixel-icon="folder"]')).toBeInTheDocument();
+  });
+
   it("exposes the selected language with pressed state", () => {
     renderHeader();
 
     const portugueseButtons = screen.getAllByRole("button", { name: "PT" });
     const englishButtons = screen.getAllByRole("button", { name: "EN" });
 
-    portugueseButtons.forEach((button) => expect(button).toHaveAttribute("aria-pressed", "true"));
-    englishButtons.forEach((button) => expect(button).toHaveAttribute("aria-pressed", "false"));
+    portugueseButtons.forEach((button) => {
+      expect(button).toHaveAttribute("aria-pressed", "true");
+      expect(button).toHaveClass("language-switch__option--selected");
+    });
+    englishButtons.forEach((button) => {
+      expect(button).toHaveAttribute("aria-pressed", "false");
+      expect(button).not.toHaveClass("language-switch__option--selected");
+    });
   });
 
   it("opens and closes the mobile menu with the keyboard and restores trigger focus", async () => {

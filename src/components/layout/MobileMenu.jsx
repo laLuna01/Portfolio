@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { WindowControls } from "@/components/ui/WindowControls";
 import LanguageSwitch from "./LanguageSwitch";
+import { PixelFolderIcon } from "./PixelIcons";
 
 export default function MobileMenu({ links, pathname, content }) {
   const [open, setOpen] = useState(false);
@@ -48,13 +49,13 @@ export default function MobileMenu({ links, pathname, content }) {
 
           <div className="mobile-menu__utilities">
             <Link
-              className="header-resume-link"
+              className="header-resume-link header-resume-link--button"
               href={content.identity.resumeUrl}
               target="_blank"
               rel="noreferrer noopener"
             >
-              <span className="header-resume-link__folder" aria-hidden="true">▰</span>
-              {content.nav.resume}
+              <PixelFolderIcon className="header-resume-link__folder" />
+              <span>{content.nav.resume}</span>
             </Link>
             <LanguageSwitch />
             <WindowControls />
